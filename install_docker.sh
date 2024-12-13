@@ -22,7 +22,7 @@ for SERVER in "${SERVERS[@]}"; do
         # Mettre à jour les paquets à nouveau
         sudo apt update
 
-        # Installer Docker
+
         sudo apt install docker-ce -y
 
         # Démarrer Docker et activer le service
