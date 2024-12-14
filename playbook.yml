@@ -3,17 +3,14 @@
   become: true
   tasks:
     - name: Mise à jour
-        sudo apt update
+    - command: sudo apt update
     - name: Installation les dépendances
-        sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+    - command: sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
     - name: Ajout de la  GPG de Docker
-        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    - command: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     - name: Ajout du dépot de Docker
-        sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+    - command: sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
     - name: Mise à jour  paquets à nouveau
-        sudo apt update
-        sudo apt install docker-ce -y
+    - command: sudo apt update; sudo apt install docker-ce -y
     - name: Demarrage et activation du service
-        sudo systemctl start docker
-        sudo systemctl enable docker
-        echo "Docker a été installé sur $SERVER."
+    - command: sudo systemctl start docker; sudo systemctl enable docker; echo "Docker a été installé sur $SERVER."
