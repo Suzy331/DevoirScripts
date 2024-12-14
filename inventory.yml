@@ -1,0 +1,11 @@
+all:
+  hosts:
+    serveur1:
+      ansible_host: 192.168.1.10
+      ansible_user: colossusmark11
+    serveur2:
+      ansible_host: 192.168.1.11
+      ansible_user: colossusmark12
+    serveur3:
+      ansible_host: 192.168.1.12
+      ansible_user: colossusmark13
